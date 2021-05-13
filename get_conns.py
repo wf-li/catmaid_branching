@@ -1,7 +1,7 @@
 import pymaid
 import pandas as pd
-import branchfxns as bf
-import connectivityfxns as cf
+from . import branchfxns as bf
+from . import connectivityfxns as cf
 
 def check_confidence(catmaid,project,connector,skid,direction,confidence = 5):
     """ Input:  catmaid client
