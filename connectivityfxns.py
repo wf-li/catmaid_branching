@@ -1,6 +1,6 @@
 # connectivityfxns
 import pymaid
-import branchfxns as bf
+from . import branchfxns as bf
 
 # connectivity analysis functions
 def sum_Conns_on_Branch(path,neuron,confidence = 5):

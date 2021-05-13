@@ -17,12 +17,17 @@ def check_confidence(catmaid,project,connector,skid,direction,confidence = 5):
     con_data = catmaid.fetch(url = 'https://zhencatmaid.com/'+ str(project) + '/connectors/' + str(connector))
 
     if direction == 'input':
-        output_check = con_data['partners']['skeleton_id' == skid]['confidence'] >= confidence
-        input_check = con_data['partners']['relation_name' == 'presynaptic_to']['confidence'] >= confidence
+        for partner in con_data['partners']:
+            if partner['skeleton_id'] == int(skid):            
+                output_check = partner['confidence'] >= confidence
+            if partner['relation_name'] == 'presynaptic_to':             
+                input_check = partner['confidence'] >= confidence
         return (output_check and input_check)
 
     elif direction == 'output':
-        return (con_data['partners']['skeleton_id' == skid]['confidence'] >= confidence)
+        for partner in con_data['partners']:
+            if partner['skeleton_id'] == int(skid):
+                return partner['confidence'] >= confidence
 
     else:
         raise ValueError('Only "input" and "output" are acceptable arguments for direction')
