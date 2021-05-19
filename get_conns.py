@@ -14,7 +14,7 @@ def check_confidence(catmaid,project,connector,skid,direction,confidence = 5):
     """
     input_check = False
     output_check = False
-    con_data = catmaid.fetch(url = 'https://zhencatmaid.com/'+ str(project) + '/connectors/' + str(connector))
+    con_data = catmaid.fetch(url = 'https://zhencatmaid.com/'+ str(project) + '/connectors/' + str(int(connector)))
 
     if direction == 'input':
         for partner in con_data['partners']:
@@ -40,7 +40,7 @@ def get_outputs(catmaid,project,connector,confidence = 5):
         Output: List of neurons that reach confidence threshold
     """
     filt_list = []
-    con_data = catmaid.fetch(url = 'https://zhencatmaid.com/'+ str(project) + '/connectors/' + str(connector))
+    con_data = catmaid.fetch(url = 'https://zhencatmaid.com/'+ str(project) + '/connectors/' + str(int(connector)))
 
     for partner in con_data['partners']:
         if partner['confidence'] >= confidence and partner['relation_name'] == 'postsynaptic_to':
@@ -54,7 +54,7 @@ def clean_inputs(catmaid,project,connector):
                 confidence value
         Output: Input neuron name
     """
-    con_data = catmaid.fetch(url = 'https://zhencatmaid.com/'+ str(project) + '/connectors/' + str(connector.connector_id))
+    con_data = catmaid.fetch(url = 'https://zhencatmaid.com/'+ str(project) + '/connectors/' + str(int(connector.connector_id)))
 
     target_skid = next(item for item in con_data['partners'] if item['relation_name'] == "presynaptic_to")['skeleton_id']
 
@@ -68,7 +68,7 @@ def clean_outputs(catmaid,project,connector):
         Output: Clean list of output neuron names
     """
     output_list = []
-    for neuron in get_outputs(catmaid,project,connector):
+    for neuron in get_outputs(catmaid,project,connector.connector_id):
         output_list.append(bf.strip_neurName(list(pymaid.get_names(neuron).values())[0]))
     return output_list
 
