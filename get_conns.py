@@ -67,7 +67,10 @@ def clean_outputs(catmaid,project,connector):
                 confidence value
         Output: Clean list of output neuron names
     """
-    return [bf.strip_neurName(output) for output in list(pymaid.get_names(get_outputs(catmaid,project,connector.connector_id)).values())]
+    output_list = []
+    for neuron in get_outputs(catmaid,project,connector):
+        output_list.append(bf.strip_neurName(list(pymaid.get_names(neuron).values())[0]))
+    return output_list
 
 def get_connection_list(all_pids,noi,confidence = 5):
     """ Input:  list of all project ideas to get list for
