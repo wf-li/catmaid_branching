@@ -1,0 +1,2 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,7125782,0,0.2890152111314255,BWMVL05,121,1,SMBVL,"['BWMVL01', 'RMDVL', 'BWMVL03', 'BWMVL05']"

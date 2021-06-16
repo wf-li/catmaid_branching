@@ -1,0 +1,3 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,5037141,0,0.9644811775724913,BWMVR08,106,1,RMGR,"['BWMVR06', 'BWMVR08', 'RMDR']"
+1,5037140,0,0.6944247981253737,BWMVR08,106,1,RMGR,"['BWMVR08', 'BWMVR04']"

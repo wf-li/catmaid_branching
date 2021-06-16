@@ -1,0 +1,2 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,9600861,0,0.8578619971035479,SDQL,156,0,SDQL,['SMBDR']

@@ -1,0 +1,4 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6646977,0,0.6093736479366687,PVPR,121,0,PVPR,"['PVCR', 'AVAR']"
+1,6646974,0,0.5620843809680315,PVPR,121,0,PVPR,"['AVBL', 'URXR', 'RIGR']"
+2,6646973,0,0.3314874068544766,PVPR,121,0,PVPR,"['AVBR', 'PVCR']"

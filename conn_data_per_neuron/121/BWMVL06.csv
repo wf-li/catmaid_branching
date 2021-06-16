@@ -1,0 +1,2 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6647294,0,0.6705422950075609,BWMVL06,121,1,RIMR,"['BWMVL06', 'BWMVL04', 'RMGL', 'SMDVR']"

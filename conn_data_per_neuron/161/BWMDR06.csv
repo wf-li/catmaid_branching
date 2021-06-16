@@ -1,0 +1,2 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,9587871,0,0.07102907666020573,BWMDR06,161,1,URBR,"['BWMDR06', 'CEPDR']"

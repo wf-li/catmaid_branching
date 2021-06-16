@@ -1,0 +1,3 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,8470158,0,0.42448107984956895,VNC_frag,135,1,vnc_fragment,"['PVT', 'VNC_frag']"
+1,8462228,0,0.545236687292704,VNC_frag,135,1,DVC,"['VNC_frag', 'SABD', 'AVAL']"

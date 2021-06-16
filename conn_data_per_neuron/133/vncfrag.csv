@@ -1,0 +1,2 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,8240766,0,0.09035467164049966,vncfrag,133,1,SMBVR,"['vncfrag', 'vncfrag']"

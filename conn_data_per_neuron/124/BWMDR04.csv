@@ -1,0 +1,2 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,7125565,0.14771656196429403,0.7877602657525274,BWMDR04,124,1,RIML,"['BWMDR04', 'RMDR', 'SMDDL']"

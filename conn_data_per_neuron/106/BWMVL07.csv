@@ -1,0 +1,3 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,5037333,0,0.012562044040261053,BWMVL07,106,1,SMBVL,"['SAADL', 'BWMVL07']"
+1,5036825,0,0.2905082356527148,BWMVL07,106,1,RIVR,"['BWMVL07', 'GLRVL']"

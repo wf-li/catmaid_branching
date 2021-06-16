@@ -1,0 +1,2 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6646941,0,0.08683190540881204,SIAVL,121,1,PVCL,"['SIAVL', 'AVER', 'AVBR', 'AVJR']"

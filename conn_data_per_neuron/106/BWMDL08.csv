@@ -1,0 +1,2 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,5037133,0,0.7600560336899042,BWMDL08,106,1,RMGL,"['RMDL', 'BWMDL06', 'BWMDL08']"

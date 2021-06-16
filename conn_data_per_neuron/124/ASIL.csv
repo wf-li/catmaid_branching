@@ -1,0 +1,3 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,7124781,0.0,0.5227574005109122,ASIL,124,0,ASIL,"['AWCR', 'AWCL']"
+1,7124780,0.03634104594884002,0.43979573227457325,ASIL,124,0,ASIL,"['AINR', 'BAGR']"

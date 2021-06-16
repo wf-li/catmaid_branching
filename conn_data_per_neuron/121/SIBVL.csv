@@ -1,0 +1,3 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6646916,0.05900046899741367,0.2980377554134561,SIBVL,121,1,OLQDL,"['RMDDR', 'SIBVL']"
+1,6375046,0.0,0.13221352802713732,SIBVL,121,1,ASHL,"['SMBDL', 'RIAL', 'SIBVL']"

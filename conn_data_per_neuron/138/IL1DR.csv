@@ -1,0 +1,3 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,9190339,0,0.505525539931104,IL1DR,138,1,URBR,"['OLQDR', 'IL1DR', 'AIMR']"
+1,9008223,0,0.9025695357566771,IL1DR,138,0,IL1DR,['SMDDL']

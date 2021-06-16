@@ -1,0 +1,5 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,8472130,0,0.4484387249756284,excgl,135,1,RIVL,"['excgl', 'SAADR']"
+1,8470755,0,0.47001372568393784,excgl,135,1,SMBVR,"['excgl', 'BWMVR03', 'BWMVR07']"
+2,8470736,0,0.39192177630196956,excgl,135,1,SMBVL,"['excgl', 'BWMVL07', 'BWMVL05']"
+3,8470228,0,0.4566244590118602,excgl,135,1,RIVL,"['SAADR', 'excgl', 'BWMVR05']"

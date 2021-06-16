@@ -1,0 +1,4 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,7185060,0,0.4214434257922968,AVL,125,1,RIS,"['AVL', 'AVER', 'RIMR']"
+1,7185056,0,0.7901701378176814,AVL,125,1,RIS,"['RIML', 'AVL', 'AVKR']"
+2,7184473,0,0.515054278463769,AVL,125,1,PVT,"['AVL', 'AVKR']"

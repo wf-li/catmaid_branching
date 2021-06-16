@@ -1,0 +1,2 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,9587783,0,1.0,BWMDR08,161,1,SMBDL,"['BWMDR04', 'BWMDR02', 'BWMDR08']"

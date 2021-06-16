@@ -1,0 +1,3 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,5030407,0,0.22149014476606912,ALNL,106,0,ALNL,['RIAL']
+1,5030403,0,0.20419809892997096,ALNL,106,0,ALNL,"['SAAVL', 'SMBDR']"

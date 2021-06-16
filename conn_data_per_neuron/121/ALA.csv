@@ -1,0 +1,4 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6374986,0,0.7674646135835899,ALA(0),121,0,ALA,"['CEPshVL', 'AVEL']"
+1,6374983,0,0.7483365830942946,ALA(0),121,0,ALA,"['AVEL', 'CEPshVL']"
+2,6374984,0,0.698159948783544,ALA(1),121,0,ALA,"['AVER', 'CEPshVR']"
