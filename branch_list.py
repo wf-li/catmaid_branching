@@ -1,29 +1,44 @@
 import pymaid
-import numpy as np
 import pandas as pd
+from ast import literal_eval
 from . import branchfxns as bf
 
 # connectivity analysis functions
-def sum_Conns_on_Branch(path,neuron,confidence = 5):
+def sum_Conns_on_Branch(path,neuron,conn_dets):
     """ Input:  list of leafnode ids
                 CatmaidNeuron object
                 Confidence value
         Output: 
     """
-
-    conn_dets = pymaid.get_connector_links(neuron)
-
-    neuron_conns = neuron.connectors[neuron.connectors.connector_id.isin(conn_dets.connector_id[conn_dets.confidence == confidence])]
+    neuron_conns = neuron.connectors[neuron.connectors.connector_id.isin(conn_dets.connector_id)]
     
     return sum(neuron_conns.node_id.isin(path))
 
-def get_branches(all_pids, noi, branch_threshold=0.05, confidence = 5):
+def get_branches(all_pids,
+                 noi,
+                 conn_data_path,
+                 ignore_tags = False,
+                 branch_threshold=0.05):
     """ Input:  list of all project ids
                 list of neurons of interest
+                path to conn_data_per_neuron folder
+                ignore 'not a branch' tags
                 % of main branch for threshold to consider branch
-                Confidence value for connections
         Output: 
     """
+    project_data = {}
+    on_branch_per_project = {}
+
+    for project in all_pids:
+        project_data[project] = pd.read_csv(conn_data_path + str(project) +  '/' + str(project) + '.csv')
+        project_data[project]['neuron'] = project_data[project]['neuron'].str.split('(').str[0]
+        on_branch_per_project[project] = []
+
+    fixed_outputs = []
+    for sublist in project_data[project].outputs:
+        fixed_outputs.append(literal_eval(sublist))
+    project_data[project]['outputs'] = fixed_outputs
+
     fullBranchList = pd.DataFrame(columns = ['leafnode',
                                                 'length',
                                                 'dist_from_root',
@@ -37,6 +52,8 @@ def get_branches(all_pids, noi, branch_threshold=0.05, confidence = 5):
                                             api_token='c48243e19b85edf37345ced8049ce5d6c5802412',
                                             project_id = project)
         
+        curr_project = project_data[project]
+
         for neurName in noi:
             print('Working on ' + neurName + ' in project ' + str(project))
             try:
@@ -67,6 +84,9 @@ def get_branches(all_pids, noi, branch_threshold=0.05, confidence = 5):
                         strneurName = bf.strip_neurName(list(pymaid.get_names(skid).values())[0]) + "(" + str(i) + ")"
                     else: 
                         strneurName = bf.strip_neurName(list(pymaid.get_names(skid).values())[0])
+
+                    connsList = curr_project.loc[curr_project['neuron'].isin([strneurName])]
+
                     bl_output = bf.get_branchList(nr_subtree[i],neur,branch_threshold)
                     branchList = bl_output[0]
                     pathList = bl_output[1]
@@ -76,16 +96,17 @@ def get_branches(all_pids, noi, branch_threshold=0.05, confidence = 5):
                     connTemp = []
                     for path in pathList:
                         lengthTemp.append(bf.cable_length(path[0],catNeurnumpy,trunk[0]))  
-                        connTemp.append(sum_Conns_on_Branch(path,neur,confidence))
+                        connTemp.append(sum_Conns_on_Branch(path,neur,connsList))
                     branchList['length'] = branchList['length']/trunklen
                     branchList['dist_from_root'] = [i/trunklen for i in lengthTemp] 
                     branchList['neurName'] = strneurName
                     branchList['project'] = project
                     branchList['n_conns'] = connTemp
-                    try:
-                        branchList = branchList[~branchList['leafnode'].astype(
-                            float).astype(int).isin(neur.tags['not a branch'])]
-                    except:
-                        pass
+                    if not ignore_tags:
+                        try:
+                            branchList = branchList[~branchList['leafnode'].astype(
+                                float).astype(int).isin(neur.tags['not a branch'])]
+                        except:
+                            pass
                     fullBranchList = fullBranchList.append(branchList)
     return fullBranchList
