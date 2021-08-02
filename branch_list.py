@@ -82,7 +82,5 @@ def get_branches(all_pids, noi, branch_threshold=0.05, confidence = 5):
                     branchList['neurName'] = strneurName
                     branchList['project'] = project
                     branchList['n_conns'] = connTemp
-                    branchList = branchList[~branchList['leafnode'].astype(
-                        float).astype(int).isin(neur.tags['not a branch'])]
                     fullBranchList = fullBranchList.append(branchList)
     return fullBranchList
