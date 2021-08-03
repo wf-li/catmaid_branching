@@ -80,10 +80,7 @@ def get_branches(all_pids,
                 nr_subtree = bf.crop_tree_nr(skTree,skid)
                 
                 for i in range(0,len(nr_subtree)):
-                    if len(nr_subtree) > 1:
-                        strneurName = bf.strip_neurName(list(pymaid.get_names(skid).values())[0]) + "(" + str(i) + ")"
-                    else: 
-                        strneurName = bf.strip_neurName(list(pymaid.get_names(skid).values())[0])
+                    strneurName = bf.strip_neurName(list(pymaid.get_names(skid).values())[0])
 
                     connsList = curr_project.loc[curr_project['neuron'].isin([strneurName])]
 
