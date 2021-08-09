@@ -10,7 +10,7 @@ def sum_Conns_on_Branch(path,neuron,conn_dets = None):
                 Confidence value
         Output: 
     """
-    if conn_dets:
+    if conn_dets != None:
         neuron_conns = neuron.connectors[neuron.connectors.connector_id.isin(conn_dets.connector_id)]
     else:        
         conn_dets = pymaid.get_connector_links(neuron)
@@ -35,7 +35,7 @@ def get_branches(all_pids,
     project_data = {}
     on_branch_per_project = {}
 
-    if conn_data_path:
+    if conn_data_path != None:
         for project in all_pids:
             project_data[project] = pd.read_csv(conn_data_path + str(project) +  '/' + str(project) + '.csv')
             project_data[project]['neuron'] = project_data[project]['neuron'].str.split('(').str[0]
@@ -59,7 +59,7 @@ def get_branches(all_pids,
                                             api_token='c48243e19b85edf37345ced8049ce5d6c5802412',
                                             project_id = project)
         
-        if conn_data_path:
+        if conn_data_path != None:
             curr_project = project_data[project]
 
         for neurName in noi:
@@ -90,7 +90,7 @@ def get_branches(all_pids,
                 for i in range(0,len(nr_subtree)):
                     strneurName = bf.strip_neurName(list(pymaid.get_names(skid).values())[0])
 
-                    if conn_data_path:
+                    if conn_data_path != None:
                         connsList = curr_project.loc[curr_project['neuron'].isin([strneurName])]
                     else:
                         connsList = None
