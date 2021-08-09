@@ -4,10 +4,11 @@ from ast import literal_eval
 from . import branchfxns as bf
 
 # connectivity analysis functions
-def sum_Conns_on_Branch(path,neuron,conn_dets = None):
+def sum_Conns_on_Branch(path,neuron,conn_dets = None, confidence = 5):
     """ Input:  list of leafnode ids
                 CatmaidNeuron object
-                Confidence value
+                Pre-loaded connection details, if available, otherwise None
+                Confidence value for connection, if pulling from CATMAID
         Output: 
     """
     if conn_dets != None:
@@ -46,12 +47,12 @@ def get_branches(all_pids,
             fixed_outputs.append(literal_eval(sublist))
         project_data[project]['outputs'] = fixed_outputs
 
-        fullBranchList = pd.DataFrame(columns = ['leafnode',
-                                                    'length',
-                                                    'dist_from_root',
-                                                    'neurName',
-                                                    'project',
-                                                    'n_conns'])
+    fullBranchList = pd.DataFrame(columns = ['leafnode',
+                                                'length',
+                                                'dist_from_root',
+                                                'neurName',
+                                                'project',
+                                                'n_conns'])
 
     for project in all_pids:    
         # open an instance of CATMAID containing data https://zhencatmaid.com
