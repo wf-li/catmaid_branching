@@ -11,7 +11,7 @@ def sum_Conns_on_Branch(path,neuron,conn_dets = None, confidence = 5):
                 Confidence value for connection, if pulling from CATMAID
         Output: 
     """
-    if conn_dets != None:
+    if isinstance(conn_dets,pd.DataFrame):
         neuron_conns = neuron.connectors[neuron.connectors.connector_id.isin(conn_dets.connector_id)]
     else:        
         conn_dets = pymaid.get_connector_links(neuron)
