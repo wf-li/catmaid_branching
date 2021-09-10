@@ -1,0 +1,2 @@
+Branch threshold: 0.0
+Ignore 'not a branch' tags: False
