@@ -1,0 +1,3 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,9001282,0.004445375785657086,0.28437163827105494,AINR,138,0,AINR,"['AFDL', 'AWCR', 'ASER']"
+1,9001275,0.0,0.689447560372118,AINR,138,0,AINR,"['BAGR', 'RMFL']"

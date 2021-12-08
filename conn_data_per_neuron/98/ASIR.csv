@@ -1,3 +1,0 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,4500708,0,0.9428052456683881,ASIR,98,0,ASIR,"['AWCL', 'CEPshDR']"
-1,4500715,0,0.4177739531275257,ASIR,98,0,ASIR,"['AIBR', 'ASGR', 'AWCL', 'AWCR']"

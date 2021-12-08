@@ -1,0 +1,5 @@
+,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,8414965,0,0.595151914615095,vncfrag,133,0,vncfrag,['SAAVL']
+1,8414964,0,0.6282691501856408,vncfrag,133,0,vncfrag,['SAAVL']
+0,8240766,0,0.08361119578634059,vncfrag,133,1,SMBVR,"['vncfrag', 'vncfrag']"
+0,8240766,0,0.09035467164049966,vncfrag,133,1,SMBVR,"['vncfrag', 'vncfrag']"
