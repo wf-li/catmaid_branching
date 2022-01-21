@@ -3,18 +3,22 @@ import pymaid
 from . import branchfxns as bf
 
 # connectivity analysis functions
-def sum_Conns_on_Branch(path,neuron,confidence = 5):
+def sum_Conns_on_Branch(path,neuron,conn_dets = None, confidence = 5):
     """ Input:  list of leafnode ids
                 CatmaidNeuron object
-                Confidence value
-        Output: 
+                Pre-loaded connection details, if available, otherwise None
+                Confidence value for connection, if pulling from CATMAID
+        Output: Number of connectors associated with branch
     """
+    if isinstance(conn_dets,pd.DataFrame):
+        neuron_conns = neuron.connectors[neuron.connectors.connector_id.isin(conn_dets.connector_id)]
+    else:        
+        conn_dets = pymaid.get_connector_links(neuron)
 
-    conn_dets = pymaid.get_connectors(neuron)
+        neuron_conns = neuron.connectors[neuron.connectors.connector_id.isin(conn_dets.connector_id[conn_dets.confidence == confidence])]
 
-    neuron_conns = neuron.connectors[neuron.connectors.connector_id.isin(conn_dets.connector_id[conn_dets.confidence == confidence])]
-    
     return sum(neuron_conns.node_id.isin(path))
+
 
 def get_norm_dist(node,neuron,trunk):
     """ Input:  node id
