@@ -175,6 +175,12 @@ def define_trunk(tree,skid,neuron):
             if tree.contains(nr_ends.node_id.values[0]):
                 return path_to_node(nr_ends.node_id.values[0],neuron,nr_starts_node)
             else:
+                print("Define_trunk has tag nerve_ring_ends but not in tree")
+                pathList = np.array(tree.paths_to_leaves(),dtype='object')
+                root = tree.root
+
+                branchList = branch_distance_df(pathList,neuron,root)
+                return pathList[branchList['length'].idxmax()]
                 pass
     else:
         print("No tag for main branch or nr_ends; defaulting to longest branch")
