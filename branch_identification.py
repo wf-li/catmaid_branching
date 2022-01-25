@@ -181,7 +181,6 @@ def define_trunk(tree,skid,neuron):
 
                 branchList = branch_distance_df(pathList,neuron,root)
                 return pathList[branchList['length'].idxmax()]
-                pass
     else:
         print("No tag for main branch or nr_ends; defaulting to longest branch")
         pathList = np.array(tree.paths_to_leaves(),dtype='object')
