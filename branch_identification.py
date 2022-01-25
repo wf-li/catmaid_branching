@@ -55,7 +55,8 @@ def crop_tree_nr(tree,skid):
             else:
                 for row in nr_ends.iterrows():
                     try:
-                        nr_subtree.remove_node(row[1].node_id)
+                        for child in nr_subtree.children(row[1].node_id):
+                            nr_subtree.remove_node(child.identifier)
                     except:
                         pass
             treelist.append(nr_subtree)
@@ -67,7 +68,8 @@ def crop_tree_nr(tree,skid):
             print("Subtree has no tag 'nerve_ring_ends'")
         else:
             for row in nr_ends.iterrows():
-                nr_subtree.remove_node(row[1].node_id)
+                for child in nr_subtree.children(row[1].node_id):
+                    nr_subtree.remove_node(child.identifier)
 
         return [nr_subtree]
 
@@ -167,11 +169,11 @@ def define_trunk(tree,skid,neuron):
     elif not nr_ends.empty:
         if len(nr_ends) > 1:
             for ending_node in nr_ends.iterrows():
-                if tree.contains(ending_node[1].parent_id):
-                    return path_to_node(ending_node[1].parent_id,neuron,nr_starts_node)
+                if tree.contains(ending_node[1].node_id):
+                    return path_to_node(ending_node[1].node_id,neuron,nr_starts_node)
         else:
-            if tree.contains(nr_ends.parent_id.values[0]):
-                return path_to_node(nr_ends.parent_id.values[0],neuron,nr_starts_node)
+            if tree.contains(nr_ends.node_id.values[0]):
+                return path_to_node(nr_ends.node_id.values[0],neuron,nr_starts_node)
             else:
                 pass
     else:
@@ -181,32 +183,6 @@ def define_trunk(tree,skid,neuron):
 
         branchList = branch_distance_df(pathList,neuron,root)
         return pathList[branchList['length'].idxmax()]
-
-def path_to_trunk(node,neuron,trunk):
-    """ Input:  node id
-                numpy array ["node_id","parent_id","x","y","z"]
-                List of nodes in trunk
-        Output: List of nodes from node to first node in trunk
-    """
-    trunk = [int(x) for x in trunk] 
-    path = path_to_node(node,neuron,trunk[0])
-    pathNew= []
-    
-    if len(trunk) >= len(path):
-        for j in range(len(path)):
-            if path[j] == trunk[j]:
-                continue
-            else:
-                pathNew.append(path[j-1])
-    else:
-        for j in range(len(trunk)):
-            if path[j] == trunk[j]:
-                continue
-            else:
-                pathNew.append(path[j-1])
-    pathNew.append(path[-1])
-
-    return pathNew
 
 def get_branchList(tree,skid,neuron,dist=0):
     """ Input:  treelib Tree object
