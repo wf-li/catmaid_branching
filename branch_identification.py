@@ -184,6 +184,32 @@ def define_trunk(tree,skid,neuron):
         branchList = branch_distance_df(pathList,neuron,root)
         return pathList[branchList['length'].idxmax()]
 
+def path_to_trunk(node,neuron,trunk):
+    """ Input:  node id
+                numpy array ["node_id","parent_id","x","y","z"]
+                List of nodes in trunk
+        Output: List of nodes from node to first node in trunk
+    """
+    trunk = [int(x) for x in trunk] 
+    path = path_to_node(node,neuron,trunk[0])
+    pathNew= []
+    
+    if len(trunk) >= len(path):
+        for j in range(len(path)):
+            if path[j] == trunk[j]:
+                continue
+            else:
+                pathNew.append(path[j-1])
+    else:
+        for j in range(len(trunk)):
+            if path[j] == trunk[j]:
+                continue
+            else:
+                pathNew.append(path[j-1])
+    pathNew.append(path[-1])
+
+    return pathNew
+
 def get_branchList(tree,skid,neuron,dist=0):
     """ Input:  treelib Tree object
                 Catmaid skeleton ID
