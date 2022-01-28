@@ -1,8 +1,0 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,8462139,0,0.7860620200304483,NR_fragment,133,1,PVCR,"['NR_fragment', 'AVEL', 'SIAVR']"
-1,8469139,0,0.9039878656056661,NR_fragment,133,0,NR_fragment,"['PVCR', 'AVBR']"
-2,8469138,0,0.6583016886551583,NR_fragment,133,0,NR_fragment,"['PVCR', 'AVEL']"
-3,8469137,0,0.4256706507653087,NR_fragment,133,0,NR_fragment,"['AVEL', 'AVKL']"
-4,8419312,0,0.4119294282949982,NR_fragment,133,1,FLPL,"['NR_fragment', 'AVEL']"
-5,8419297,0,0.4494768260792311,NR_fragment,133,1,FLPL,"['NR_fragment', 'AVEL']"
-6,8419285,0,0.622422648554338,NR_fragment,133,1,FLPL,"['PVCR', 'NR_fragment', 'AVEL']"

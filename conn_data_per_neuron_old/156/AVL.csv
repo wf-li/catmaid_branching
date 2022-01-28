@@ -1,2 +1,2 @@
 ,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,9599834,0,0.7499005111631347,AVL,156,1,PVT,"['AVL', 'AVKR']"
+0,9599834,0,0.7487966625454908,AVL,156,1,PVT,"['AVL', 'AVKR']"

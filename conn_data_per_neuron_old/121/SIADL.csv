@@ -1,2 +1,2 @@
 ,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,6647027,0,0.7620567043804993,SIADL,121,1,RIAL,"['RMDDL', 'RMDR', 'SIADL']"
+0,6647027,0,0.7604515104232766,SIADL,121,1,RIAL,"['RMDDL', 'RMDR', 'SIADL']"

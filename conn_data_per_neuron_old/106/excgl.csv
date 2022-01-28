@@ -1,2 +1,2 @@
 ,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,5037374,0.01650755795291903,0.561711796571437,excgl,106,1,SMBVR,"['excgl', 'SAADR']"
+0,5037374,0.01648501705596936,0.5609447850147886,excgl,106,1,SMBVR,"['excgl', 'SAADR']"

@@ -3,7 +3,6 @@ import pandas as pd
 from ast import literal_eval
 from . import branch_identification as bf
 
-# connectivity analysis functions
 def sum_Conns_on_Branch(path,neuron,conn_dets = None, confidence = 5):
     """ Input:  list of leafnode ids
                 CatmaidNeuron object
