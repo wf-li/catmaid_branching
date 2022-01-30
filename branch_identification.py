@@ -161,16 +161,24 @@ def define_trunk(tree,skid,neuron):
                     print("Subtree has tag 'main_branch_ends'")
                     return path_to_node(ending_node[1].node_id,neuron,nr_starts_node)
         else:
-            if tree.contains(mb_ends.node_id):
+            if tree.contains(mb_ends.node_id.values[0]):
                 print("Subtree has tag 'main_branch_ends'")
-                return path_to_node(mb_ends.node_id,neuron,nr_starts_node)
+                return path_to_node(mb_ends.node_id.values[0],neuron,nr_starts_node)
             else:
                 print("Define_trunk has tag main_branch_ends but not in tree")
     elif not nr_ends.empty:
         if len(nr_ends) > 1:
+            trunk_candidate_list = []
             for ending_node in nr_ends.iterrows():
                 if tree.contains(ending_node[1].node_id):
-                    return path_to_node(ending_node[1].node_id,neuron,nr_starts_node)
+                    trunk_candidate_list.append(path_to_node(ending_node[1].node_id,neuron,nr_starts_node))
+            winner = trunk_candidate_list[0]
+            for candidate in trunk_candidate_list[1:]:
+                if cable_length(winner[-1],neuron,nr_starts_node) <= cable_length(candidate[-1],neuron,nr_starts_node):
+                    winner = candidate
+                else:
+                    pass
+            return winner
         else:
             if tree.contains(nr_ends.node_id.values[0]):
                 return path_to_node(nr_ends.node_id.values[0],neuron,nr_starts_node)

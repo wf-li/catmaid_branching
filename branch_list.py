@@ -3,6 +3,7 @@ import pandas as pd
 from ast import literal_eval
 from . import branch_identification as bf
 
+# connectivity analysis functions
 def sum_Conns_on_Branch(path,neuron,conn_dets = None, confidence = 5):
     """ Input:  list of leafnode ids
                 CatmaidNeuron object
@@ -23,12 +24,14 @@ def get_branches(all_pids,
                  noi,
                  conn_data_path = None,
                  ignore_tags = False,
-                 branch_threshold=0.05):
+                 branch_threshold=0.05,
+                 conn_included = False):
     """ Input:  list of all project ids
                 list of neurons of interest
                 path to conn_data_per_neuron folder
                 ignore 'not a branch' tags
                 % of main branch for threshold to consider branch
+                Include connectivity information in table
         Output: 
                 Pandas dataframe containing branch information
     """
@@ -36,16 +39,17 @@ def get_branches(all_pids,
     project_data = {}
     on_branch_per_project = {}
 
-    if conn_data_path != None:
-        for project in all_pids:
-            project_data[project] = pd.read_csv(conn_data_path + str(project) +  '/' + str(project) + '.csv')
-            project_data[project]['neuron'] = project_data[project]['neuron'].str.split('(').str[0]
-            on_branch_per_project[project] = []
+    if conn_included:
+        if conn_data_path != None:
+            for project in all_pids:
+                project_data[project] = pd.read_csv(conn_data_path + str(project) +  '/' + str(project) + '.csv')
+                project_data[project]['neuron'] = project_data[project]['neuron'].str.split('(').str[0]
+                on_branch_per_project[project] = []
 
-        fixed_outputs = []
-        for sublist in project_data[project].outputs:
-            fixed_outputs.append(literal_eval(sublist))
-        project_data[project]['outputs'] = fixed_outputs
+            fixed_outputs = []
+            for sublist in project_data[project].outputs:
+                fixed_outputs.append(literal_eval(sublist))
+            project_data[project]['outputs'] = fixed_outputs
 
     fullBranchList = pd.DataFrame(columns = ['leafnode',
                                                 'length',
@@ -60,8 +64,9 @@ def get_branches(all_pids,
                                             api_token='c48243e19b85edf37345ced8049ce5d6c5802412',
                                             project_id = project)
         
-        if conn_data_path != None:
-            curr_project = project_data[project]
+        if conn_included:
+            if conn_data_path != None:
+                curr_project = project_data[project]
 
         for neurName in noi:
             print('Working on ' + neurName + ' in project ' + str(project))
@@ -91,10 +96,11 @@ def get_branches(all_pids,
                 for i in range(0,len(nr_subtree)):
                     strneurName = bf.strip_neurName(list(pymaid.get_names(skid).values())[0])
 
-                    if conn_data_path != None:
-                        connsList = curr_project.loc[curr_project['neuron'].isin([strneurName])]
-                    else:
-                        connsList = None
+                    if conn_included:
+                        if conn_data_path != None:
+                            connsList = curr_project.loc[curr_project['neuron'].isin([strneurName])]
+                        else:
+                            connsList = None
 
                     bl_output = bf.get_branchList(nr_subtree[i],skid,neurnumpy,branch_threshold)
                     branchList = bl_output[0]
@@ -103,14 +109,19 @@ def get_branches(all_pids,
                     trunklen = bf.cable_length(trunk[-1],neurnumpy,trunk[0])
                     lengthTemp = []
                     connTemp = []
-                    for path in pathList:
-                        lengthTemp.append(bf.cable_length(path[0],neurnumpy,trunk[0]))  
-                        connTemp.append(sum_Conns_on_Branch(path,neur,connsList))
+                    if conn_included:
+                        for path in pathList:
+                            lengthTemp.append(bf.cable_length(path[0],neurnumpy,trunk[0]))  
+                            connTemp.append(sum_Conns_on_Branch(path,neur,connsList))
+                    else:
+                        for path in pathList:
+                            lengthTemp.append(bf.cable_length(path[0],neurnumpy,trunk[0]))  
                     branchList['length'] = branchList['length']/trunklen
                     branchList['dist_from_root'] = [i/trunklen for i in lengthTemp] 
                     branchList['neurName'] = strneurName
                     branchList['project'] = project
-                    branchList['n_conns'] = connTemp
+                    if conn_included:
+                        branchList['n_conns'] = connTemp
                     if not ignore_tags:
                         try:
                             branchList = branchList[~branchList['leafnode'].astype(
