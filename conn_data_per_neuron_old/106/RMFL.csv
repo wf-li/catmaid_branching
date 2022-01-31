@@ -1,2 +1,2 @@
 ,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,4966205,5037329,3.533175130546239,0.0,RMFL,106,1,SMBVL,"['SAADL', 'RIH', 'RMFL', 'SAAVR']"
+0,4966205,5037329,0,0.734758283632353,RMFL,106,1,SMBVL,"['SAADL', 'RIH', 'RMFL', 'SAAVR']"
