@@ -80,6 +80,9 @@ def get_branches(all_pids,
                 catNeur = [catNeur]
 
             for neur in catNeur:
+                if neur.name != neurName:
+                    continue
+
                 if neur.n_nodes < 10:
                     continue
 
