@@ -1,4 +1,4 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,9584144,0,0.9013225016132035,ALA(0),161,0,ALA,"['CEPshVR', 'CEPshVR', 'AVER']"
-1,9584143,0,0.967165003856812,ALA(0),161,0,ALA,"['AVER', 'CEPshVR']"
-2,9584141,0,0.9368356510200192,ALA(1),161,0,ALA,"['CEPshVL', 'AVEL']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,9557771,9584144,0,0.9013225016132035,ALA(0),161,0,ALA,"['CEPshVR', 'CEPshVR', 'AVER']"
+1,9557776,9584143,0,0.967165003856812,ALA(0),161,0,ALA,"['AVER', 'CEPshVR']"
+2,9557858,9584141,0,0.9368356510200192,ALA(1),161,0,ALA,"['CEPshVL', 'AVEL']"

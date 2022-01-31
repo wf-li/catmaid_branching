@@ -1,4 +1,4 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7185060,0,0.4210063769621283,AVL,125,1,RIS,"['AVL', 'AVER', 'RIMR']"
-1,7185056,0,0.7893507088902564,AVL,125,1,RIS,"['RIML', 'AVL', 'AVKR']"
-2,7184473,0,0.514520152514473,AVL,125,1,PVT,"['AVL', 'AVKR']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,7113909,7185060,0,0.4210063769621283,AVL,125,1,RIS,"['AVL', 'AVER', 'RIMR']"
+1,7114004,7185056,0,0.7893507088902564,AVL,125,1,RIS,"['RIML', 'AVL', 'AVKR']"
+2,7113927,7184473,0,0.514520152514473,AVL,125,1,PVT,"['AVL', 'AVKR']"

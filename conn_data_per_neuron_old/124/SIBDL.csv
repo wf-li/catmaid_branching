@@ -1,2 +1,2 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7050417,0.7033437147769978,0.36387889762638476,SIBDL,124,1,AIYL,"['AIZL', 'SIBDL', 'RIAL']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6850404,7050417,0,0.06121971036016181,SIBDL,124,1,AIYL,"['AIZL', 'SIBDL', 'RIAL']"

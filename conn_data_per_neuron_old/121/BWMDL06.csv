@@ -1,2 +1,2 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7125180,0,0.5942736326754976,BWMDL06,121,1,RMGL,"['BWMDL06', 'RMDL', 'RMDVR']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6479090,7125180,0,0.5942736326754976,BWMDL06,121,1,RMGL,"['BWMDL06', 'RMDL', 'RMDVR']"

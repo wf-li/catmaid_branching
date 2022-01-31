@@ -1,3 +1,3 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,9008641,0.36932084143864724,0.0,OLQDL,138,0,OLQDL,['IL2L']
-1,9008638,0.21826109887563155,0.0,OLQDL,138,0,OLQDL,"['RMHL', 'RICR']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,9008642,9008641,0.36932084143864724,0.0,OLQDL,138,0,OLQDL,['IL2L']
+1,9008639,9008638,0.21826109887563155,0.0,OLQDL,138,0,OLQDL,"['RMHL', 'RICR']"

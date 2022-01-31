@@ -1,2 +1,2 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7050914,0,0.6389144924014944,ALML,124,0,ALML,"['BDUL', 'PVR']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6863258,7050914,0,0.6389144924014944,ALML,124,0,ALML,"['BDUL', 'PVR']"

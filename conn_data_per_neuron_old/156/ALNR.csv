@@ -1,2 +1,3 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,9598290,0,0.2764210656688576,ALNR,156,0,ALNR,['SAAVR']
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,9508984,9598290,0,0.2764210656688576,ALNR,156,0,ALNR,['SAAVR']
+0,9508984,9598290,0,0.2764210656688576,ALNR,156,0,ALNR,['SAAVR']

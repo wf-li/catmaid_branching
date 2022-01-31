@@ -1,2 +1,2 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,9001714,0.12857863795652752,0.4710590205303235,ALA(1),138,1,ASKR,"['ALA', 'AVJR']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,9001728,9001714,0.12857863795652752,0.4710590205303235,ALA(1),138,1,ASKR,"['ALA', 'AVJR']"

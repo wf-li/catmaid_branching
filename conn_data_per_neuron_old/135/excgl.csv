@@ -1,5 +1,5 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,8472130,0,0.4476150760896934,excgl,135,1,RIVL,"['excgl', 'SAADR']"
-1,8470755,0,0.46915044992300803,excgl,135,1,SMBVR,"['excgl', 'BWMVR03', 'BWMVR07']"
-2,8470736,0,0.3912019322821599,excgl,135,1,SMBVL,"['excgl', 'BWMVL07', 'BWMVL05']"
-3,8470228,0,0.45578577536120934,excgl,135,1,RIVL,"['SAADR', 'excgl', 'BWMVR05']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,8330748,8472130,0,0.4476150760896934,excgl,135,1,RIVL,"['excgl', 'SAADR']"
+1,8330763,8470755,0,0.46915044992300803,excgl,135,1,SMBVR,"['excgl', 'BWMVR03', 'BWMVR07']"
+2,8330701,8470736,0,0.3912019322821599,excgl,135,1,SMBVL,"['excgl', 'BWMVL07', 'BWMVL05']"
+3,8330752,8470228,0,0.45578577536120934,excgl,135,1,RIVL,"['SAADR', 'excgl', 'BWMVR05']"

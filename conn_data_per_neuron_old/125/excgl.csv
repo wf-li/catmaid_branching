@@ -1,2 +1,2 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7183882,0,0.3101622952509514,excgl,125,1,BDUR,"['ALMR', 'CEPshVR', 'excgl']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,7108294,7183882,0,0.3101622952509514,excgl,125,1,BDUR,"['ALMR', 'CEPshVR', 'excgl']"

@@ -1,3 +1,3 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7125260,0,0.8356217899540058,IL2VL,124,0,IL2VL,"['RMEV', 'RMEL', 'RIPL']"
-1,7125259,0,0.8936618106132406,IL2VL,124,0,IL2VL,"['RMER', 'RMED', 'RIPL']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6818361,7125260,0,0.8356217899540058,IL2VL,124,0,IL2VL,"['RMEV', 'RMEL', 'RIPL']"
+1,6818370,7125259,0,0.8936618106132406,IL2VL,124,0,IL2VL,"['RMER', 'RMED', 'RIPL']"

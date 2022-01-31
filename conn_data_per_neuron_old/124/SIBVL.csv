@@ -1,3 +1,3 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7125333,0.0,0.04758175006076122,SIBVL,124,1,PVCL,"['SIBVL', 'SIAVL']"
-1,7125305,0.10843545692027357,0.3442612890522114,SIBVL,124,1,OLQDL,"['RMDDR', 'SIBVL']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6676691,7125333,0.0,0.04758175006076122,SIBVL,124,1,PVCL,"['SIBVL', 'SIAVL']"
+1,6676849,7125305,0.10843545692027357,0.3442612890522114,SIBVL,124,1,OLQDL,"['RMDDR', 'SIBVL']"

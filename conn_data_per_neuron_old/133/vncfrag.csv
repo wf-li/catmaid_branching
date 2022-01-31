@@ -1,5 +1,5 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,8414965,0,0.5852653592122107,vncfrag,133,0,vncfrag,['SAAVL']
-1,8414964,0,0.6178324572863994,vncfrag,133,0,vncfrag,['SAAVL']
-0,8240766,0,0.08234492864709347,vncfrag,133,1,SMBVR,"['vncfrag', 'vncfrag']"
-0,8240766,0,0.08966997078869461,vncfrag,133,1,SMBVR,"['vncfrag', 'vncfrag']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,8218445,8414965,0,0.5852653592122107,vncfrag,133,0,vncfrag,['SAAVL']
+1,8218449,8414964,0,0.6178324572863994,vncfrag,133,0,vncfrag,['SAAVL']
+0,8218224,8240766,0,0.08234492864709347,vncfrag,133,1,SMBVR,"['vncfrag', 'vncfrag']"
+0,8218090,8240766,0,0.08966997078869461,vncfrag,133,1,SMBVR,"['vncfrag', 'vncfrag']"

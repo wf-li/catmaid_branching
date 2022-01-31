@@ -1,3 +1,2 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,4503740,0,0.5105030713708649,excgl,98,1,RIVL,"['excgl', 'GLRVR']"
-0,4503740,0,0.5105030713708649,excgl,98,1,RIVL,"['excgl', 'GLRVR']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,4413366,4503740,0,0.5105030713708649,excgl,98,1,RIVL,"['excgl', 'GLRVR']"

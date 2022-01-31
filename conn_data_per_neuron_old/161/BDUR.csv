@@ -1,3 +1,3 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,9584999,0,0.5241626478277469,BDUR,161,0,BDUR,"['ALMR', 'PVCR']"
-1,9584155,0,0.8791000457440036,BDUR,161,1,ALMR,['BDUR']
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,9540789,9584999,0,0.5241626478277469,BDUR,161,0,BDUR,"['ALMR', 'PVCR']"
+1,9540847,9584155,0,0.8791000457440036,BDUR,161,1,ALMR,['BDUR']

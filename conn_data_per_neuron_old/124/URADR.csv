@@ -1,3 +1,3 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7182479,0,0.8984537507880412,URADR,124,0,URADR,"['RIPR', 'RMER', 'BWMDR01', 'BWMDR02']"
-1,7182478,0,0.9433711707669414,URADR,124,0,URADR,"['BWMDR01', 'RMER']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6929417,7182479,0,0.8984537507880412,URADR,124,0,URADR,"['RIPR', 'RMER', 'BWMDR01', 'BWMDR02']"
+1,6929431,7182478,0,0.9433711707669414,URADR,124,0,URADR,"['BWMDR01', 'RMER']"

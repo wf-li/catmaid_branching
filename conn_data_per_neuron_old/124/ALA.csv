@@ -1,3 +1,3 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7050849,0,0.8106281673607365,ALA(0),124,0,ALA,"['IL1L', 'AVEL']"
-1,7050901,0,0.7592922116582543,ALA(1),124,0,ALA,['AVER']
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6846056,7050849,0,0.8106281673607365,ALA(0),124,0,ALA,"['IL1L', 'AVEL']"
+1,6843219,7050901,0,0.7592922116582543,ALA(1),124,0,ALA,['AVER']

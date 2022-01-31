@@ -1,2 +1,2 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7125188,0,1.0,BWMVR06,121,1,RMGR,"['BWMVR06', 'AVKR', 'RMDR']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6369651,7125188,0,1.0,BWMVR06,121,1,RMGR,"['BWMVR06', 'AVKR', 'RMDR']"

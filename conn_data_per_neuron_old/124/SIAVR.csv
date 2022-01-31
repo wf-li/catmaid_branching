@@ -1,3 +1,3 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7125410,0,0.6151336066347588,SIAVR,124,1,RIAL,"['SIAVR', 'RMDVL']"
-1,7125331,0,0.0,SIAVR,124,1,PVCL,"['RIH', 'SMBDR', 'SIAVR']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,6742424,7125410,0,0.6151336066347588,SIAVR,124,1,RIAL,"['SIAVR', 'RMDVL']"
+1,6742223,7125331,0,0.0,SIAVR,124,1,PVCL,"['RIH', 'SMBDR', 'SIAVR']"

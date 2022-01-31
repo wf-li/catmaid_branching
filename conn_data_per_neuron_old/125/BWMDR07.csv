@@ -1,2 +1,2 @@
-,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
-0,7185431,0,0.4627484609833968,BWMDR07,125,1,SMBDL,"['BWMDR07', 'BWMDR05', 'BWMDR03', 'RMED']"
+,node_id,connector_id,length,dist_from_root,neuron,project,type,inputs,outputs
+0,7065930,7185431,0,0.4627484609833968,BWMDR07,125,1,SMBDL,"['BWMDR07', 'BWMDR05', 'BWMDR03', 'RMED']"
